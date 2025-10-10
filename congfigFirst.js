@@ -50,8 +50,6 @@
             params[key] = otherOptions[key];
         });
     }
-
-    // 覆写DNS
     function overwriteDns(params) {
         const dnsList = [
             "https://223.5.5.5/dns-query",
@@ -74,8 +72,6 @@
         };
         params.dns = { ...dnsOptions };
     }
-
-    // 覆写DNS.Fake IP Filter
     function overwriteFakeIpFilter(params) {
         const fakeIpFilter = [
             "+.+m2m",
@@ -101,8 +97,6 @@
         ];
         params.dns["fake-ip-filter"] = fakeIpFilter;
     }
-
-    // 覆写DNS.Nameserver Policy
     function overwriteNameserverPolicy(params) {
         const nameserverPolicy = {
             "dns.alidns.com": "quic://223.5.5.5:853",
@@ -426,8 +420,6 @@
         };
         params.dns["nameserver-policy"] = nameserverPolicy;
     }
-
-    // 覆写hosts
     function overwriteHosts(params) {
         const hosts = {
             "dns.alidns.com": ['223.5.5.5', '223.6.6.6', '2400:3200:baba::1', '2400:3200::1'],
@@ -436,8 +428,6 @@
         };
         params.hosts = hosts;
     }
-
-    // 覆写Tunnel
     function overwriteTunnel(params) {
         const tunnelOptions = {
             enable: true,
@@ -451,8 +441,6 @@
         };
         params.tun = { ...tunnelOptions };
     }
-
-    // 覆写代理组
     function overwriteProxyGroups(params) {
         const allProxies = params["proxies"].map((e) => e.name);
         const excludeTerms = "剩余|到期|主页|官网|游戏|关注|网站|地址|有效|网址|禁止|邮箱|发布|客服|订阅|节点|问题|联系";
@@ -631,8 +619,6 @@
         groups.push(...manualProxyGroupsConfig);
         params["proxy-groups"] = groups;
     }
-
-    // 覆写规则
     function overwriteRules(params) {
         const adNonipRules = [
             "RULE-SET,reject_non_ip,REJECT",
