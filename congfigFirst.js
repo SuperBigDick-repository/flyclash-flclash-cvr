@@ -1,4 +1,4 @@
-// FlyClash Configuration Script (Adapted from Mihomo Party / Clash Verge Rev)
+// FlyClash Configuration Script
 
 function main(params) {
     if (!params.proxies) return params;
